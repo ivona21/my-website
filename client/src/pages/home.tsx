@@ -23,10 +23,11 @@ import {
   Monitor,
   Server
 } from "lucide-react";
-import { SiLinkedin, SiGithub, SiTwitter } from "react-icons/si";
+import { SiLinkedin, SiGithub, SiX } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useTheme } from "@/lib/theme-provider";
 
 const experience = [
   {
@@ -133,18 +134,12 @@ const skillCategories = [
 ];
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const { theme, setTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const saved = localStorage.getItem("darkMode");
-    if (saved === "true") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
+  const isDarkMode = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -155,9 +150,7 @@ export default function Home() {
   }, []);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-    localStorage.setItem("darkMode", (!darkMode).toString());
+    setTheme(isDarkMode ? "light" : "dark");
   };
 
   const navLinks = [
@@ -185,7 +178,7 @@ export default function Home() {
               ))}
               
               <Button variant="ghost" size="icon" onClick={toggleDarkMode} data-testid="button-theme-toggle" aria-label="Toggle dark mode">
-                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </Button>
             </div>
             
@@ -209,7 +202,7 @@ export default function Home() {
                   </a>
                 ))}
                 <button onClick={toggleDarkMode} className="flex items-center gap-2 nav-link">
-                  {darkMode ? "Light Mode" : "Dark Mode"}
+                  {isDarkMode ? "Light Mode" : "Dark Mode"}
                 </button>
               </div>
             </motion.div>
@@ -425,14 +418,16 @@ export default function Home() {
                     ))}
                   </div>
                   
-                  <button
+                  <Button
+                    variant="link"
+                    size="sm"
                     onClick={() => setExpandedJob(expandedJob === index ? null : index)}
-                    className="text-sm text-primary hover:underline flex items-center gap-1"
+                    className="text-sm text-primary px-0"
                     data-testid={`button-toggle-details-${index}`}
                   >
                     <span>{expandedJob === index ? 'Show less' : 'Show more'}</span>
                     <ChevronDown className={`w-4 h-4 transition-transform ${expandedJob === index ? 'rotate-180' : ''}`} />
-                  </button>
+                  </Button>
                 </Card>
               </motion.div>
             ))}
@@ -640,8 +635,8 @@ export default function Home() {
                 GitHub
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" data-testid="link-twitter">
-                <SiTwitter className="w-5 h-5" />
-                Twitter
+                <SiX className="w-5 h-5" />
+                X / Twitter
               </a>
             </div>
           </div>
