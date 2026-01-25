@@ -6,7 +6,6 @@ import {
   Users, 
   Lightbulb,
   ChevronDown,
-  ExternalLink,
   Download,
   Send,
   Mail,
@@ -16,14 +15,17 @@ import {
   Moon,
   Menu,
   X,
-  Folder,
   Database,
   Cloud,
-  Settings,
   Monitor,
-  Server
+  Server,
+  Phone,
+  MapPin,
+  GraduationCap,
+  BookOpen,
+  Brain
 } from "lucide-react";
-import { SiLinkedin, SiGithub, SiX } from "react-icons/si";
+import { SiLinkedin } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -31,106 +33,101 @@ import { useTheme } from "@/lib/theme-provider";
 
 const experience = [
   {
-    company: "TechForward Inc.",
-    role: "Senior Software Engineer",
-    period: "2021 - Present",
-    description: "Leading development of enterprise-scale microservices architecture serving 2M+ daily active users. Spearheaded migration from legacy monolith to cloud-native solutions, reducing infrastructure costs by 40%. Mentoring team of 5 engineers and establishing best practices for code quality and CI/CD pipelines.",
+    company: "symphony.is",
+    location: "Sarajevo, BiH",
+    role: "Software Developer",
+    period: "2018 - Current",
+    description: "Delivering enterprise React-based web applications for large clients across fashion, healthcare, tech, education, and logistics. Strong focus on clean, maintainable code and scalable frontend architecture.",
     achievements: [
-      "Architected real-time analytics platform processing 10M+ events daily",
-      "Reduced API response times by 65% through optimization strategies",
-      "Led adoption of Kubernetes, achieving 99.99% uptime SLA"
+      "Recently adopted an AI-first development approach (Replit, code agents) to increase delivery speed while maintaining high engineering standards",
+      "Collaborated across the stack with exposure to .NET and Angular while specializing in React",
+      "Built complex, long-running projects with scalable frontend architecture"
     ],
-    technologies: [".NET Core", "React", "Azure", "Kubernetes", "PostgreSQL"]
+    technologies: ["React", "TypeScript", "JavaScript", ".NET", "Angular"]
   },
   {
-    company: "DataStream Solutions",
-    role: "Full Stack Developer",
-    period: "2018 - 2021",
-    description: "Built and maintained customer-facing applications for fintech platform handling $50M+ in transactions. Collaborated with cross-functional teams to deliver features that increased user engagement by 35%.",
+    company: "Softray Solutions LLC",
+    location: "Sarajevo, BiH",
+    role: "Software Developer",
+    period: "2017 - 2018",
+    description: "Contributed to a .NET healthcare application with a strong focus on ADA-compliant, accessible UI development. Built practical knowledge of accessibility standards and inclusive design within a regulated domain.",
     achievements: [
-      "Developed payment processing module integrated with Stripe and PayPal",
-      "Created automated testing suite achieving 90% code coverage",
-      "Implemented OAuth 2.0 authentication system for 100K+ users"
+      "Developed ADA-compliant, accessible UI components for healthcare application",
+      "Gained expertise in accessibility standards and inclusive design",
+      "Worked within regulated healthcare domain requirements"
     ],
-    technologies: ["Node.js", "React", "TypeScript", "MongoDB", "AWS"]
+    technologies: [".NET", "Accessibility", "ADA Compliance", "Healthcare"]
   },
   {
-    company: "InnovateTech Labs",
-    role: "Junior Developer",
-    period: "2016 - 2018",
-    description: "Started professional journey building web applications and internal tools. Gained expertise in full-stack development while contributing to client projects across multiple industries.",
+    company: "Mostar Designs",
+    location: "Mostar, BiH",
+    role: "Software Developer",
+    period: "2016 - 2017",
+    description: "Started career as a junior .NET developer, taking responsibility for implementing a complex CMS as the sole developer under the guidance of a senior architect.",
     achievements: [
-      "Built CRM system that improved sales team efficiency by 50%",
-      "Developed responsive web applications for 15+ client projects",
-      "Created internal tooling that automated 20+ hours of manual work weekly"
+      "Built and maintained a full-stack system from the ground up using .NET, MySQL, and Angular",
+      "Applied three-layer architecture and core software design principles",
+      "Delivered a market-ready product also used internally as a CMS for a tourism-focused website"
     ],
-    technologies: ["C#", ".NET", "JavaScript", "SQL Server", "jQuery"]
+    technologies: [".NET", "MySQL", "Angular", "CMS", "Full-Stack"]
   }
 ];
 
 const skills = {
-  languages: ["C#", "TypeScript", "JavaScript", "Python", "SQL", "Go"],
-  frontend: ["React", "Next.js", "Vue.js", "Tailwind CSS", "HTML5", "CSS3"],
-  backend: [".NET Core", "Node.js", "Express", "GraphQL", "REST APIs"],
-  databases: ["PostgreSQL", "MongoDB", "Redis", "SQL Server", "Elasticsearch"],
-  cloud: ["Azure", "AWS", "Docker", "Kubernetes", "Terraform", "CI/CD"],
-  tools: ["Git", "VS Code", "Jira", "Figma", "Postman", "Linux"]
+  frontend: ["React", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+  backend: [".NET", ".NET Core", "REST APIs", "Three-Layer Architecture"],
+  databases: ["MySQL", "SQL Server"],
+  specializations: ["Accessibility (ADA)", "AI-Assisted Development", "Replit", "Code Agents"],
+  tools: ["Git", "VS Code", "Agile", "Scrum"]
 };
 
-const projects = [
+const education = [
   {
-    title: "CloudScale Analytics",
-    description: "Real-time data analytics platform with interactive dashboards and ML-powered insights. Built with React, .NET Core, and Azure services.",
-    tags: ["React", ".NET Core", "Azure", "Machine Learning"],
-    link: "#"
+    title: "BitCamp - Selective Software Development Bootcamp",
+    duration: "6 months",
+    description: "Intensive, full-time program focused on .NET and JavaScript, designed to prepare participants for immediate entry into the software industry.",
+    highlights: [
+      "Selected as one of 50 participants out of 1,400 applicants",
+      "Based on aptitude, problem-solving skills, and demonstrated potential for programming",
+      "Successfully transitioned into a professional software engineering role upon completion"
+    ],
+    icon: GraduationCap
   },
   {
-    title: "DevOps Toolkit",
-    description: "Open-source CLI tool for automating deployment pipelines. 500+ GitHub stars and used by development teams worldwide.",
-    tags: ["Go", "Docker", "Kubernetes", "Open Source"],
-    link: "#"
+    title: "Self-Directed Software Engineering Education",
+    duration: "Ongoing",
+    description: "Built strong foundations through independent learning, combining hands-on projects with online courses, documentation, and paid learning resources.",
+    highlights: [
+      "Continuously expanded skills beyond formal education",
+      "Maintained long-term growth across frontend, backend, and modern development practices"
+    ],
+    icon: BookOpen
   },
   {
-    title: "FinTrack Pro",
-    description: "Personal finance management app with bank integrations, budget tracking, and investment portfolio analysis.",
-    tags: ["React Native", "Node.js", "Plaid API", "PostgreSQL"],
-    link: "#"
-  },
-  {
-    title: "CodeReview AI",
-    description: "AI-powered code review assistant that provides intelligent suggestions and detects potential bugs before they reach production.",
-    tags: ["Python", "OpenAI", "GitHub API", "FastAPI"],
-    link: "#"
-  }
-];
-
-const testimonials = [
-  {
-    quote: "One of the most talented engineers I've worked with. Delivers exceptional results consistently.",
-    author: "Sarah Chen",
-    role: "VP of Engineering, TechForward Inc."
-  },
-  {
-    quote: "Incredible problem-solver with a keen eye for clean, maintainable code.",
-    author: "Michael Rodriguez",
-    role: "Tech Lead, DataStream Solutions"
+    title: "Faculty of Philosophy, Psychology",
+    duration: "Incomplete",
+    description: "Academic background in psychology, providing a strong understanding of human behavior, cognition, and user-centered thinking.",
+    highlights: [
+      "Strong understanding of human behavior and cognition",
+      "User-centered thinking applied to software development"
+    ],
+    icon: Brain
   }
 ];
 
 const stats = [
-  { value: "9+", label: "Years Experience" },
-  { value: "50+", label: "Projects Delivered" },
-  { value: "2M+", label: "Users Served" },
-  { value: "15+", label: "Technologies" }
+  { value: "7+", label: "Years Experience" },
+  { value: "3", label: "Companies" },
+  { value: "React", label: "Specialization" },
+  { value: "AI", label: "Modern Approach" }
 ];
 
 const skillCategories = [
-  { title: "Languages", icon: Code, color: "text-blue-500", bgColor: "bg-blue-500/10", skills: skills.languages },
   { title: "Frontend", icon: Monitor, color: "text-purple-500", bgColor: "bg-purple-500/10", skills: skills.frontend },
   { title: "Backend", icon: Server, color: "text-green-500", bgColor: "bg-green-500/10", skills: skills.backend },
   { title: "Databases", icon: Database, color: "text-yellow-500", bgColor: "bg-yellow-500/10", skills: skills.databases },
-  { title: "Cloud & DevOps", icon: Cloud, color: "text-cyan-500", bgColor: "bg-cyan-500/10", skills: skills.cloud },
-  { title: "Tools", icon: Settings, color: "text-red-500", bgColor: "bg-red-500/10", skills: skills.tools },
+  { title: "Specializations", icon: Cloud, color: "text-cyan-500", bgColor: "bg-cyan-500/10", skills: skills.specializations },
+  { title: "Tools & Methods", icon: Code, color: "text-red-500", bgColor: "bg-red-500/10", skills: skills.tools },
 ];
 
 export default function Home() {
@@ -139,7 +136,7 @@ export default function Home() {
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
-  const isDarkMode = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  const isDarkMode = theme === "dark" || (theme === "system" && typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -157,7 +154,7 @@ export default function Home() {
     { href: "#about", label: "About" },
     { href: "#experience", label: "Experience" },
     { href: "#skills", label: "Skills" },
-    { href: "#projects", label: "Projects" },
+    { href: "#education", label: "Education" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -167,7 +164,7 @@ export default function Home() {
       <nav className={`fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50 transition-shadow ${scrolled ? 'shadow-lg' : ''}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <a href="#" className="text-xl font-bold gradient-text" data-testid="link-logo">JD</a>
+            <a href="#" className="text-xl font-bold gradient-text" data-testid="link-logo">IMS</a>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
@@ -201,9 +198,10 @@ export default function Home() {
                     {link.label}
                   </a>
                 ))}
-                <button onClick={toggleDarkMode} className="flex items-center gap-2 nav-link">
+                <Button variant="ghost" onClick={toggleDarkMode} className="justify-start px-0">
+                  {isDarkMode ? <Sun className="w-5 h-5 mr-2" /> : <Moon className="w-5 h-5 mr-2" />}
                   {isDarkMode ? "Light Mode" : "Dark Mode"}
-                </button>
+                </Button>
               </div>
             </motion.div>
           )}
@@ -227,12 +225,12 @@ export default function Home() {
               className="space-y-8"
             >
               <div className="space-y-4">
-                <p className="text-primary font-mono text-sm tracking-wider uppercase">Senior Software Engineer</p>
+                <p className="text-primary font-mono text-sm tracking-wider uppercase">Software Developer</p>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-                  Hi, I'm <span className="gradient-text">John Doe</span>
+                  Hi, I'm <span className="gradient-text">Ivona Malekovic Selimovic</span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-lg">
-                  Building scalable software solutions for 9+ years. Passionate about clean code, cloud architecture, and creating impactful digital experiences.
+                  Software Engineer with 7+ years' experience, specializing in React frontend development with a recent focus on AI-assisted development.
                 </p>
               </div>
               
@@ -253,8 +251,8 @@ export default function Home() {
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </a>
                 </Button>
-                <Button variant="outline" asChild data-testid="button-view-work">
-                  <a href="#projects">View My Work</a>
+                <Button variant="outline" asChild data-testid="button-view-experience">
+                  <a href="#experience">View Experience</a>
                 </Button>
               </div>
             </motion.div>
@@ -287,7 +285,7 @@ export default function Home() {
                   <span className="inline-block w-2 h-2 bg-green-500 rounded-full ml-2 animate-pulse"></span>
                 </div>
                 <div className="absolute -bottom-4 -left-4 px-4 py-2 glass-card rounded-lg shadow-lg animate-float" style={{ animationDelay: '1s' }}>
-                  <span className="font-mono text-sm text-primary">9+ years exp.</span>
+                  <span className="font-mono text-sm text-primary">7+ years exp.</span>
                 </div>
               </div>
             </motion.div>
@@ -308,23 +306,25 @@ export default function Home() {
             >
               <div>
                 <p className="text-primary font-mono text-sm mb-2">About Me</p>
-                <h2 className="section-title">Crafting Code That Makes a Difference</h2>
+                <h2 className="section-title">Crafting Quality Software Solutions</h2>
               </div>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  I'm a passionate software engineer with over 9 years of experience building robust, scalable applications. My journey in tech started in 2016, and since then, I've had the privilege of working with amazing teams at companies ranging from innovative startups to enterprise organizations.
+                  I'm a Software Engineer with 7+ years' experience, specializing in React frontend development. My journey in tech started in 2016, and I've had the privilege of working across fashion, healthcare, tech, education, and logistics industries.
                 </p>
                 <p>
-                  I specialize in full-stack development with a focus on .NET and React ecosystems. I believe in writing clean, maintainable code and am passionate about mentoring junior developers and contributing to open-source projects.
+                  With earlier experience in Angular and .NET, I bring a well-rounded perspective to frontend development. I focus on clean, maintainable code and scalable frontend architecture, developed primarily in React across long-running, complex projects.
                 </p>
                 <p>
-                  When I'm not coding, you'll find me exploring new technologies, contributing to tech communities, or enjoying a good book on software architecture.
+                  Recently, I've adopted an AI-first development approach using Replit and code agents to increase delivery speed while maintaining high engineering standards.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
-                <Button variant="outline" data-testid="button-download-resume">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Resume
+                <Button variant="outline" asChild data-testid="button-linkedin">
+                  <a href="https://www.linkedin.com/in/ivona-malekovic-selimovic-2708ab10a/" target="_blank" rel="noopener noreferrer">
+                    <SiLinkedin className="w-4 h-4 mr-2" />
+                    LinkedIn Profile
+                  </a>
                 </Button>
               </div>
             </motion.div>
@@ -333,9 +333,9 @@ export default function Home() {
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { icon: Code, title: "Clean Code", description: "Writing maintainable, well-documented code that stands the test of time.", color: "text-primary", bgColor: "bg-primary/10" },
-                { icon: Zap, title: "Performance", description: "Optimizing for speed and efficiency at every layer of the stack.", color: "text-accent", bgColor: "bg-accent/10" },
-                { icon: Users, title: "Collaboration", description: "Working effectively with teams to deliver exceptional results.", color: "text-green-500", bgColor: "bg-green-500/10" },
-                { icon: Lightbulb, title: "Innovation", description: "Continuously learning and applying cutting-edge technologies.", color: "text-orange-500", bgColor: "bg-orange-500/10" },
+                { icon: Zap, title: "AI-Powered", description: "Leveraging AI tools to increase delivery speed while maintaining quality.", color: "text-accent", bgColor: "bg-accent/10" },
+                { icon: Users, title: "Accessibility", description: "Building inclusive, ADA-compliant interfaces for all users.", color: "text-green-500", bgColor: "bg-green-500/10" },
+                { icon: Lightbulb, title: "Continuous Learning", description: "Always expanding skills across frontend, backend, and modern practices.", color: "text-orange-500", bgColor: "bg-orange-500/10" },
               ].map((item, index) => (
                 <motion.div
                   key={item.title}
@@ -365,7 +365,7 @@ export default function Home() {
             <p className="text-primary font-mono text-sm mb-2">Career Path</p>
             <h2 className="section-title">Work Experience</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A journey through innovative companies where I've built impactful solutions and grown as an engineer.
+              A journey through companies where I've built impactful solutions and grown as an engineer.
             </p>
           </div>
           
@@ -385,6 +385,7 @@ export default function Home() {
                     <div>
                       <h3 className="text-xl font-semibold" data-testid={`text-job-role-${index}`}>{job.role}</h3>
                       <p className="text-primary font-medium" data-testid={`text-job-company-${index}`}>{job.company}</p>
+                      <p className="text-sm text-muted-foreground">{job.location}</p>
                     </div>
                     <span className="text-sm text-muted-foreground font-mono whitespace-nowrap" data-testid={`text-job-period-${index}`}>{job.period}</span>
                   </div>
@@ -419,10 +420,10 @@ export default function Home() {
                   </div>
                   
                   <Button
-                    variant="link"
+                    variant="ghost"
                     size="sm"
                     onClick={() => setExpandedJob(expandedJob === index ? null : index)}
-                    className="text-sm text-primary px-0"
+                    className="text-sm text-primary"
                     data-testid={`button-toggle-details-${index}`}
                   >
                     <span>{expandedJob === index ? 'Show less' : 'Show more'}</span>
@@ -442,7 +443,7 @@ export default function Home() {
             <p className="text-primary font-mono text-sm mb-2">Technical Expertise</p>
             <h2 className="section-title">Skills & Technologies</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A comprehensive toolkit built over 9+ years of solving real-world problems.
+              A comprehensive toolkit built over 7+ years of solving real-world problems.
             </p>
           </div>
           
@@ -455,8 +456,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 space-y-4 glass-card h-full">
-                  <div className="flex items-center gap-3">
+                <Card className="p-6 h-full glass-card">
+                  <div className="flex items-center gap-3 mb-4">
                     <div className={`w-10 h-10 rounded-lg ${category.bgColor} flex items-center justify-center`}>
                       <category.icon className={`w-5 h-5 ${category.color}`} />
                     </div>
@@ -464,9 +465,9 @@ export default function Home() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
-                      <span key={skill} className="chip" data-testid={`chip-skill-${skill.toLowerCase()}`}>
+                      <Badge key={skill} variant="secondary" data-testid={`chip-skill-${skill.toLowerCase().replace(/\s+/g, '-')}`}>
                         {skill}
-                      </span>
+                      </Badge>
                     ))}
                   </div>
                 </Card>
@@ -476,84 +477,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20">
+      {/* Education Section */}
+      <section id="education" className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-primary font-mono text-sm mb-2">Portfolio</p>
-            <h2 className="section-title">Featured Projects</h2>
+            <p className="text-primary font-mono text-sm mb-2">Background</p>
+            <h2 className="section-title">Education</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A selection of projects that showcase my skills and passion for building great software.
+              A blend of formal training, selective bootcamp experience, and continuous self-directed learning.
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <motion.a
-                key={project.title}
-                href={project.link}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="block"
-                data-testid={`card-project-${index}`}
-              >
-                <Card className="p-6 glass-card group transition-all duration-300 hover:border-primary/50 h-full">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                      <Folder className="w-6 h-6 text-primary" />
-                    </div>
-                    <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors" data-testid={`text-project-title-${index}`}>{project.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </Card>
-              </motion.a>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline" data-testid="link-github">
-              View more on GitHub
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-primary font-mono text-sm mb-2">Recommendations</p>
-            <h2 className="section-title">What Colleagues Say</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.map((testimonial, index) => (
+          <div className="space-y-6">
+            {education.map((edu, index) => (
               <motion.div
-                key={testimonial.author}
+                key={edu.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 sm:p-8 glass-card" data-testid={`card-testimonial-${index}`}>
-                  <svg className="w-8 h-8 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
-                  </svg>
-                  <p className="text-lg mb-6 italic">"{testimonial.quote}"</p>
-                  <div>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                <Card className="p-6 sm:p-8 glass-card">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <edu.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                        <h3 className="text-lg font-semibold" data-testid={`text-edu-title-${index}`}>{edu.title}</h3>
+                        <Badge variant="outline">{edu.duration}</Badge>
+                      </div>
+                      <p className="text-muted-foreground mb-4">{edu.description}</p>
+                      <ul className="space-y-2">
+                        {edu.highlights.map((highlight, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </Card>
               </motion.div>
@@ -563,82 +526,135 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 bg-muted/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-primary font-mono text-sm mb-2">Get in Touch</p>
-            <h2 className="section-title mb-4">Let's Work Together</h2>
-            <p className="text-muted-foreground mb-8">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          <div className="text-center mb-16">
+            <p className="text-primary font-mono text-sm mb-2">Get In Touch</p>
+            <h2 className="section-title">Let's Work Together</h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              I'm currently available for new opportunities. Feel free to reach out!
             </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div className="space-y-6">
+                <Card className="p-6 glass-card">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email</p>
+                      <a href="mailto:ivonamalekovic@hotmail.com" className="font-medium" data-testid="link-email">
+                        ivonamalekovic@hotmail.com
+                      </a>
+                    </div>
+                  </div>
+                </Card>
+                
+                <Card className="p-6 glass-card">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Phone</p>
+                      <a href="tel:+38764454 1426" className="font-medium" data-testid="link-phone">
+                        +387 64 454 1426
+                      </a>
+                    </div>
+                  </div>
+                </Card>
+                
+                <Card className="p-6 glass-card">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Location</p>
+                      <p className="font-medium" data-testid="text-location">Sarajevo, BiH</p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+              
+              {/* Social Links */}
+              <div className="flex gap-4">
+                <Button variant="outline" size="icon" asChild data-testid="button-linkedin-icon">
+                  <a href="https://www.linkedin.com/in/ivona-malekovic-selimovic-2708ab10a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <SiLinkedin className="w-5 h-5" />
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
             
-            <Card className="p-8 text-left space-y-6 glass-card">
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="Your name"
-                    className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                    data-testid="input-name"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                    data-testid="input-email"
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  placeholder="What's this about?"
-                  className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                  data-testid="input-subject"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">Message</label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  placeholder="Tell me about your project..."
-                  className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
-                  data-testid="input-message"
-                ></textarea>
-              </div>
-              <Button className="w-full" data-testid="button-send-message">
-                Send Message
-                <Send className="w-4 h-4 ml-2" />
-              </Button>
-            </Card>
-            
-            <div className="mt-12 flex flex-wrap justify-center gap-6">
-              <a href="mailto:john@example.com" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" data-testid="link-email">
-                <Mail className="w-5 h-5" />
-                john@example.com
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" data-testid="link-linkedin">
-                <SiLinkedin className="w-5 h-5" />
-                LinkedIn
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" data-testid="link-github-footer">
-                <SiGithub className="w-5 h-5" />
-                GitHub
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" data-testid="link-twitter">
-                <SiX className="w-5 h-5" />
-                X / Twitter
-              </a>
-            </div>
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="p-6 sm:p-8 glass-card">
+                <form className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-medium">Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Your name"
+                        data-testid="input-name"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-medium">Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="your@email.com"
+                        data-testid="input-email"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      placeholder="What's this about?"
+                      data-testid="input-subject"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-medium">Message</label>
+                    <textarea
+                      id="message"
+                      rows={5}
+                      className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+                      placeholder="Your message..."
+                      data-testid="input-message"
+                    ></textarea>
+                  </div>
+                  <Button type="submit" className="w-full" data-testid="button-send-message">
+                    <Send className="w-4 h-4 mr-2" />
+                    Send Message
+                  </Button>
+                </form>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -646,13 +662,17 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 border-t border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              2024 John Doe. Built with React & Tailwind CSS.
+              © {new Date().getFullYear()} Ivona Malekovic Selimovic. All rights reserved.
             </p>
-            <p className="text-sm text-muted-foreground">
-              Designed with care
-            </p>
+            <div className="flex gap-4">
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://www.linkedin.com/in/ivona-malekovic-selimovic-2708ab10a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <SiLinkedin className="w-5 h-5" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </footer>

@@ -1,6 +1,6 @@
-# Personal Portfolio Website
+# Ivona Malekovic Selimovic - Portfolio Website
 
-A professional portfolio website for a software developer showcasing 9+ years of experience across 3 companies.
+A professional portfolio website for Ivona Malekovic Selimovic, a Software Developer with 7+ years of experience specializing in React frontend development.
 
 ## Overview
 
@@ -21,6 +21,7 @@ This is a lightweight, modern personal website built with React, Tailwind CSS, a
 - **Routing**: Wouter
 - **State Management**: React Query
 - **UI Components**: Custom + Radix UI primitives
+- **SEO**: react-helmet-async
 
 ## Project Structure
 
@@ -32,29 +33,35 @@ client/
       not-found.tsx     # 404 page
     components/
       ui/               # Shadcn UI components
+    lib/
+      theme-provider.tsx # Dark/Light mode provider
     index.css           # Global styles with CSS variables
-    App.tsx             # Main app with routing
+    App.tsx             # Main app with routing and SEO
 ```
 
 ## Sections
 
 1. **Hero** - Introduction with profile photo placeholder, stats, and CTAs
-2. **About** - Bio and core values (Clean Code, Performance, Collaboration, Innovation)
-3. **Experience** - 3 companies from 2016-present with expandable details
-4. **Skills** - Technology chips organized by category (Languages, Frontend, Backend, etc.)
-5. **Projects** - Featured portfolio projects
-6. **Testimonials** - Colleague recommendations
-7. **Contact** - Contact form and social links
+2. **About** - Bio and core values (Clean Code, AI-Powered, Accessibility, Continuous Learning)
+3. **Experience** - 3 companies (symphony.is, Softray Solutions, Mostar Designs) from 2016-current
+4. **Skills** - Technology chips organized by category (Frontend, Backend, Databases, Specializations, Tools)
+5. **Education** - BitCamp bootcamp, self-directed learning, psychology background
+6. **Contact** - Contact form and contact info (email, phone, location)
+
+## Contact Information
+
+- **Email**: ivonamalekovic@hotmail.com
+- **Phone**: +387 64 454 1426
+- **Location**: Sarajevo, BiH
+- **LinkedIn**: linkedin.com/in/ivona-malekovic-selimovic-2708ab10a
 
 ## Customization
 
 To personalize the website:
 
-1. Replace photo placeholder in Hero section
-2. Update personal info (name, email, links)
-3. Edit experience data in `home.tsx`
-4. Update skills and projects arrays
-5. Customize colors in `index.css` (CSS variables)
+1. Replace photo placeholder in Hero section with actual profile photo
+2. Update resume/CV download link if needed
+3. Customize colors in `index.css` (CSS variables)
 
 ## Running Locally
 

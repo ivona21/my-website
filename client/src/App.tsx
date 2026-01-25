@@ -21,14 +21,14 @@ function App() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>John Doe - Senior Software Engineer | Portfolio</title>
-        <meta name="description" content="Senior Software Engineer with 9+ years of experience building scalable software solutions. Specializing in .NET, React, and cloud architecture." />
-        <meta property="og:title" content="John Doe - Senior Software Engineer" />
-        <meta property="og:description" content="Building scalable software solutions for 9+ years. Passionate about clean code, cloud architecture, and creating impactful digital experiences." />
+        <title>Ivona Malekovic Selimovic - Software Developer | Portfolio</title>
+        <meta name="description" content="Software Engineer with 7+ years' experience specializing in React frontend development. Earlier experience in Angular and .NET, with a focus on AI-assisted development." />
+        <meta property="og:title" content="Ivona Malekovic Selimovic - Software Developer" />
+        <meta property="og:description" content="Software Engineer with 7+ years' experience specializing in React frontend development and AI-assisted development." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="John Doe - Senior Software Engineer" />
-        <meta name="twitter:description" content="Building scalable software solutions for 9+ years. Passionate about clean code, cloud architecture, and creating impactful digital experiences." />
+        <meta name="twitter:title" content="Ivona Malekovic Selimovic - Software Developer" />
+        <meta name="twitter:description" content="Software Engineer with 7+ years' experience specializing in React frontend development and AI-assisted development." />
       </Helmet>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
