@@ -1,0 +1,627 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const experience = [
+  {
+    company: "TechForward Inc.",
+    role: "Senior Software Engineer",
+    period: "2021 - Present",
+    description: "Leading development of enterprise-scale microservices architecture serving 2M+ daily active users. Spearheaded migration from legacy monolith to cloud-native solutions, reducing infrastructure costs by 40%. Mentoring team of 5 engineers and establishing best practices for code quality and CI/CD pipelines.",
+    achievements: [
+      "Architected real-time analytics platform processing 10M+ events daily",
+      "Reduced API response times by 65% through optimization strategies",
+      "Led adoption of Kubernetes, achieving 99.99% uptime SLA"
+    ],
+    technologies: [".NET Core", "React", "Azure", "Kubernetes", "PostgreSQL"]
+  },
+  {
+    company: "DataStream Solutions",
+    role: "Full Stack Developer",
+    period: "2018 - 2021",
+    description: "Built and maintained customer-facing applications for fintech platform handling $50M+ in transactions. Collaborated with cross-functional teams to deliver features that increased user engagement by 35%.",
+    achievements: [
+      "Developed payment processing module integrated with Stripe and PayPal",
+      "Created automated testing suite achieving 90% code coverage",
+      "Implemented OAuth 2.0 authentication system for 100K+ users"
+    ],
+    technologies: ["Node.js", "React", "TypeScript", "MongoDB", "AWS"]
+  },
+  {
+    company: "InnovateTech Labs",
+    role: "Junior Developer",
+    period: "2016 - 2018",
+    description: "Started professional journey building web applications and internal tools. Gained expertise in full-stack development while contributing to client projects across multiple industries.",
+    achievements: [
+      "Built CRM system that improved sales team efficiency by 50%",
+      "Developed responsive web applications for 15+ client projects",
+      "Created internal tooling that automated 20+ hours of manual work weekly"
+    ],
+    technologies: ["C#", ".NET", "JavaScript", "SQL Server", "jQuery"]
+  }
+];
+
+const skills = {
+  languages: ["C#", "TypeScript", "JavaScript", "Python", "SQL", "Go"],
+  frontend: ["React", "Next.js", "Vue.js", "Tailwind CSS", "HTML5", "CSS3"],
+  backend: [".NET Core", "Node.js", "Express", "GraphQL", "REST APIs"],
+  databases: ["PostgreSQL", "MongoDB", "Redis", "SQL Server", "Elasticsearch"],
+  cloud: ["Azure", "AWS", "Docker", "Kubernetes", "Terraform", "CI/CD"],
+  tools: ["Git", "VS Code", "Jira", "Figma", "Postman", "Linux"]
+};
+
+const projects = [
+  {
+    title: "CloudScale Analytics",
+    description: "Real-time data analytics platform with interactive dashboards and ML-powered insights. Built with React, .NET Core, and Azure services.",
+    tags: ["React", ".NET Core", "Azure", "Machine Learning"],
+    link: "#"
+  },
+  {
+    title: "DevOps Toolkit",
+    description: "Open-source CLI tool for automating deployment pipelines. 500+ GitHub stars and used by development teams worldwide.",
+    tags: ["Go", "Docker", "Kubernetes", "Open Source"],
+    link: "#"
+  },
+  {
+    title: "FinTrack Pro",
+    description: "Personal finance management app with bank integrations, budget tracking, and investment portfolio analysis.",
+    tags: ["React Native", "Node.js", "Plaid API", "PostgreSQL"],
+    link: "#"
+  },
+  {
+    title: "CodeReview AI",
+    description: "AI-powered code review assistant that provides intelligent suggestions and detects potential bugs before they reach production.",
+    tags: ["Python", "OpenAI", "GitHub API", "FastAPI"],
+    link: "#"
+  }
+];
+
+const testimonials = [
+  {
+    quote: "One of the most talented engineers I've worked with. Delivers exceptional results consistently.",
+    author: "Sarah Chen",
+    role: "VP of Engineering, TechForward Inc."
+  },
+  {
+    quote: "Incredible problem-solver with a keen eye for clean, maintainable code.",
+    author: "Michael Rodriguez",
+    role: "Tech Lead, DataStream Solutions"
+  }
+];
+
+const stats = [
+  { value: "9+", label: "Years Experience" },
+  { value: "50+", label: "Projects Delivered" },
+  { value: "2M+", label: "Users Served" },
+  { value: "15+", label: "Technologies" }
+];
+---
+
+<Layout title="John Doe - Senior Software Engineer">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50" x-data="{ scrolled: false, mobileOpen: false }" @scroll.window="scrolled = window.scrollY > 20" :class="{ 'shadow-lg': scrolled }">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="text-xl font-bold gradient-text" data-testid="link-logo">JD</a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="nav-link" data-testid="link-about">About</a>
+          <a href="#experience" class="nav-link" data-testid="link-experience">Experience</a>
+          <a href="#skills" class="nav-link" data-testid="link-skills">Skills</a>
+          <a href="#projects" class="nav-link" data-testid="link-projects">Projects</a>
+          <a href="#contact" class="nav-link" data-testid="link-contact">Contact</a>
+          
+          <!-- Dark Mode Toggle -->
+          <button @click="darkMode = !darkMode" class="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors" data-testid="button-theme-toggle" aria-label="Toggle dark mode">
+            <svg x-show="!darkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+            <svg x-show="darkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-cloak>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button @click="mobileOpen = !mobileOpen" class="md:hidden p-2 rounded-lg bg-secondary" data-testid="button-mobile-menu" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path x-show="!mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <path x-show="mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" x-cloak></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div x-show="mobileOpen" x-transition class="md:hidden py-4 border-t border-border" x-cloak>
+        <div class="flex flex-col gap-4">
+          <a href="#about" class="nav-link" @click="mobileOpen = false">About</a>
+          <a href="#experience" class="nav-link" @click="mobileOpen = false">Experience</a>
+          <a href="#skills" class="nav-link" @click="mobileOpen = false">Skills</a>
+          <a href="#projects" class="nav-link" @click="mobileOpen = false">Projects</a>
+          <a href="#contact" class="nav-link" @click="mobileOpen = false">Contact</a>
+          <button @click="darkMode = !darkMode" class="flex items-center gap-2 nav-link">
+            <span x-text="darkMode ? 'Light Mode' : 'Dark Mode'"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)" x-show="shown" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
+          <div class="space-y-4">
+            <p class="text-primary font-mono text-sm tracking-wider uppercase">Senior Software Engineer</p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
+              Hi, I'm <span class="gradient-text">John Doe</span>
+            </h1>
+            <p class="text-xl text-muted-foreground max-w-lg">
+              Building scalable software solutions for 9+ years. Passionate about clean code, cloud architecture, and creating impactful digital experiences.
+            </p>
+          </div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-4 rounded-lg bg-card border border-border">
+                <div class="text-2xl font-bold gradient-text" data-testid={`text-stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>{stat.value}</div>
+                <div class="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+          
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity" data-testid="button-get-in-touch">
+              Get in Touch
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-colors" data-testid="button-view-work">
+              View My Work
+            </a>
+          </div>
+        </div>
+        
+        <!-- Hero Image -->
+        <div class="relative flex justify-center lg:justify-end" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 300)" x-show="shown" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
+          <div class="relative">
+            <!-- Profile Image Placeholder -->
+            <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-gradient-to-br from-primary to-accent p-1">
+              <div class="w-full h-full rounded-2xl bg-card flex items-center justify-center overflow-hidden">
+                <div class="text-center p-8">
+                  <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4">
+                    <svg class="w-16 h-16 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                  </div>
+                  <p class="text-sm text-muted-foreground">Your photo here</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Floating Elements -->
+            <div class="absolute -top-4 -right-4 px-4 py-2 glass-card rounded-lg shadow-lg animate-float">
+              <span class="text-sm font-medium">Available for hire</span>
+              <span class="inline-block w-2 h-2 bg-green-500 rounded-full ml-2 animate-pulse"></span>
+            </div>
+            <div class="absolute -bottom-4 -left-4 px-4 py-2 glass-card rounded-lg shadow-lg animate-float" style="animation-delay: 1s;">
+              <span class="font-mono text-sm text-primary">9+ years exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-muted/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div>
+            <p class="text-primary font-mono text-sm mb-2">About Me</p>
+            <h2 class="section-title">Crafting Code That Makes a Difference</h2>
+          </div>
+          <div class="space-y-4 text-muted-foreground">
+            <p>
+              I'm a passionate software engineer with over 9 years of experience building robust, scalable applications. My journey in tech started in 2016, and since then, I've had the privilege of working with amazing teams at companies ranging from innovative startups to enterprise organizations.
+            </p>
+            <p>
+              I specialize in full-stack development with a focus on .NET and React ecosystems. I believe in writing clean, maintainable code and am passionate about mentoring junior developers and contributing to open-source projects.
+            </p>
+            <p>
+              When I'm not coding, you'll find me exploring new technologies, contributing to tech communities, or enjoying a good book on software architecture.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a href="/resume.pdf" class="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-lg font-medium hover:bg-secondary transition-colors" data-testid="button-download-resume">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Download Resume
+            </a>
+          </div>
+        </div>
+        
+        <!-- Core Values -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="p-6 glass-card space-y-3">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Clean Code</h3>
+            <p class="text-sm text-muted-foreground">Writing maintainable, well-documented code that stands the test of time.</p>
+          </div>
+          <div class="p-6 glass-card space-y-3">
+            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Performance</h3>
+            <p class="text-sm text-muted-foreground">Optimizing for speed and efficiency at every layer of the stack.</p>
+          </div>
+          <div class="p-6 glass-card space-y-3">
+            <div class="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Collaboration</h3>
+            <p class="text-sm text-muted-foreground">Working effectively with teams to deliver exceptional results.</p>
+          </div>
+          <div class="p-6 glass-card space-y-3">
+            <div class="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Innovation</h3>
+            <p class="text-sm text-muted-foreground">Continuously learning and applying cutting-edge technologies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-primary font-mono text-sm mb-2">Career Path</p>
+        <h2 class="section-title">Work Experience</h2>
+        <p class="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          A journey through innovative companies where I've built impactful solutions and grown as an engineer.
+        </p>
+      </div>
+      
+      <div class="space-y-8">
+        {experience.map((job, index) => (
+          <div class="glass-card p-6 sm:p-8 relative overflow-hidden group" x-data="{ expanded: false }">
+            <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-accent"></div>
+            
+            <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
+              <div>
+                <h3 class="text-xl font-semibold" data-testid={`text-job-role-${index}`}>{job.role}</h3>
+                <p class="text-primary font-medium" data-testid={`text-job-company-${index}`}>{job.company}</p>
+              </div>
+              <span class="text-sm text-muted-foreground font-mono whitespace-nowrap" data-testid={`text-job-period-${index}`}>{job.period}</span>
+            </div>
+            
+            <p class="text-muted-foreground mb-4">{job.description}</p>
+            
+            <div x-show="expanded" x-transition x-cloak class="mb-4">
+              <h4 class="font-medium mb-2">Key Achievements:</h4>
+              <ul class="space-y-2">
+                {job.achievements.map((achievement) => (
+                  <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                    <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {achievement}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+              {job.technologies.map((tech) => (
+                <span class="chip" data-testid={`chip-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}>{tech}</span>
+              ))}
+            </div>
+            
+            <button @click="expanded = !expanded" class="text-sm text-primary hover:underline flex items-center gap-1" data-testid={`button-toggle-details-${index}`}>
+              <span x-text="expanded ? 'Show less' : 'Show more'"></span>
+              <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': expanded }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-muted/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-primary font-mono text-sm mb-2">Technical Expertise</p>
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          A comprehensive toolkit built over 9+ years of solving real-world problems.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass-card p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Languages</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {skills.languages.map((skill) => (
+              <span class="chip" data-testid={`chip-skill-${skill.toLowerCase()}`}>{skill}</span>
+            ))}
+          </div>
+        </div>
+        
+        <div class="glass-card p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Frontend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {skills.frontend.map((skill) => (
+              <span class="chip" data-testid={`chip-skill-${skill.toLowerCase()}`}>{skill}</span>
+            ))}
+          </div>
+        </div>
+        
+        <div class="glass-card p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Backend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {skills.backend.map((skill) => (
+              <span class="chip" data-testid={`chip-skill-${skill.toLowerCase()}`}>{skill}</span>
+            ))}
+          </div>
+        </div>
+        
+        <div class="glass-card p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Databases</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {skills.databases.map((skill) => (
+              <span class="chip" data-testid={`chip-skill-${skill.toLowerCase()}`}>{skill}</span>
+            ))}
+          </div>
+        </div>
+        
+        <div class="glass-card p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Cloud & DevOps</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {skills.cloud.map((skill) => (
+              <span class="chip" data-testid={`chip-skill-${skill.toLowerCase()}`}>{skill}</span>
+            ))}
+          </div>
+        </div>
+        
+        <div class="glass-card p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold">Tools</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {skills.tools.map((skill) => (
+              <span class="chip" data-testid={`chip-skill-${skill.toLowerCase()}`}>{skill}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-primary font-mono text-sm mb-2">Portfolio</p>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          A selection of projects that showcase my skills and passion for building great software.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 gap-6">
+        {projects.map((project, index) => (
+          <a href={project.link} class="glass-card p-6 group transition-all duration-300 hover:border-primary/50 block" data-testid={`card-project-${index}`}>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                </svg>
+              </div>
+              <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors" data-testid={`text-project-title-${index}`}>{project.title}</h3>
+            <p class="text-sm text-muted-foreground mb-4">{project.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span class="text-xs px-2 py-1 rounded bg-secondary text-secondary-foreground">{tag}</span>
+              ))}
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary hover:underline" data-testid="link-github">
+          View more on GitHub
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-muted/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-primary font-mono text-sm mb-2">Recommendations</p>
+        <h2 class="section-title">What Colleagues Say</h2>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        {testimonials.map((testimonial, index) => (
+          <div class="glass-card p-6 sm:p-8" data-testid={`card-testimonial-${index}`}>
+            <svg class="w-8 h-8 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+            </svg>
+            <p class="text-lg mb-6 italic">{testimonial.quote}</p>
+            <div>
+              <p class="font-semibold">{testimonial.author}</p>
+              <p class="text-sm text-muted-foreground">{testimonial.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-primary font-mono text-sm mb-2">Get in Touch</p>
+        <h2 class="section-title mb-4">Let's Work Together</h2>
+        <p class="text-muted-foreground mb-8">
+          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+        </p>
+        
+        <div class="glass-card p-8 text-left space-y-6">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="name" class="text-sm font-medium">Name</label>
+              <input type="text" id="name" placeholder="Your name" class="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" data-testid="input-name">
+            </div>
+            <div class="space-y-2">
+              <label for="email" class="text-sm font-medium">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" class="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" data-testid="input-email">
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label for="subject" class="text-sm font-medium">Subject</label>
+            <input type="text" id="subject" placeholder="What's this about?" class="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" data-testid="input-subject">
+          </div>
+          <div class="space-y-2">
+            <label for="message" class="text-sm font-medium">Message</label>
+            <textarea id="message" rows="4" placeholder="Tell me about your project..." class="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none" data-testid="input-message"></textarea>
+          </div>
+          <button type="submit" class="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2" data-testid="button-send-message">
+            Send Message
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="mt-12 flex flex-wrap justify-center gap-6">
+          <a href="mailto:john@example.com" class="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" data-testid="link-email">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            john@example.com
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" data-testid="link-linkedin">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" data-testid="link-github-footer">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" data-testid="link-twitter">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-muted-foreground">
+          &copy; 2024 John Doe. Built with Astro & Tailwind CSS.
+        </p>
+        <p class="text-sm text-muted-foreground">
+          Designed with care
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <style is:global>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
+</Layout>
