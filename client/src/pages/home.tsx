@@ -114,10 +114,10 @@ const education = [
 ];
 
 const stats = [
-  { value: "7+", label: "Years Experience" },
+  { value: "7+", label: "Years" },
   { value: "3", label: "Companies" },
-  { value: "React", label: "Specialization" },
-  { value: "AI", label: "Modern Approach" }
+  { value: "React", label: "Focus" },
+  { value: "AI", label: "Powered" }
 ];
 
 const skillCategories = [
