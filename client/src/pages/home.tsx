@@ -6,8 +6,6 @@ import {
   Users, 
   Lightbulb,
   ChevronDown,
-  Download,
-  Send,
   Mail,
   ArrowRight,
   Check,
@@ -279,12 +277,8 @@ export default function Home() {
                   </div>
                 </div>
                 
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 px-4 py-2 glass-card rounded-lg shadow-lg animate-float">
-                  <span className="text-sm font-medium">Available for hire</span>
-                  <span className="inline-block w-2 h-2 bg-green-500 rounded-full ml-2 animate-pulse"></span>
-                </div>
-                <div className="absolute -bottom-4 -left-4 px-4 py-2 glass-card rounded-lg shadow-lg animate-float" style={{ animationDelay: '1s' }}>
+                {/* Floating Element */}
+                <div className="absolute -bottom-4 -left-4 px-4 py-2 glass-card rounded-lg shadow-lg animate-float">
                   <span className="font-mono text-sm text-primary">7+ years exp.</span>
                 </div>
               </div>
@@ -527,135 +521,72 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
             <p className="text-primary font-mono text-sm mb-2">Get In Touch</p>
-            <h2 className="section-title">Let's Work Together</h2>
+            <h2 className="section-title">Contact Information</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              I'm currently available for new opportunities. Feel free to reach out!
+              Feel free to reach out for professional inquiries or networking opportunities.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-8"
-            >
-              <div className="space-y-6">
-                <Card className="p-6 glass-card">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">Email</p>
-                      <a href="mailto:ivonamalekovic@hotmail.com" className="font-medium" data-testid="link-email">
-                        ivonamalekovic@hotmail.com
-                      </a>
-                    </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card className="p-8 sm:p-10 glass-card">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Email */}
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Mail className="w-7 h-7 text-primary" />
                   </div>
-                </Card>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1">Email</p>
+                    <a href="mailto:ivonamalekovic@hotmail.com" className="font-medium text-lg" data-testid="link-email">
+                      ivonamalekovic@hotmail.com
+                    </a>
+                  </div>
+                </div>
                 
-                <Card className="p-6 glass-card">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">Phone</p>
-                      <a href="tel:+38764454 1426" className="font-medium" data-testid="link-phone">
-                        +387 64 454 1426
-                      </a>
-                    </div>
+                {/* Phone */}
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Phone className="w-7 h-7 text-primary" />
                   </div>
-                </Card>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1">Phone</p>
+                    <a href="tel:+387644541426" className="font-medium text-lg" data-testid="link-phone">
+                      +387 64 454 1426
+                    </a>
+                  </div>
+                </div>
                 
-                <Card className="p-6 glass-card">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="font-medium" data-testid="text-location">Sarajevo, BiH</p>
-                    </div>
+                {/* Location */}
+                <div className="flex flex-col items-center text-center space-y-3 sm:col-span-2 lg:col-span-1">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                    <MapPin className="w-7 h-7 text-primary" />
                   </div>
-                </Card>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1">Location</p>
+                    <p className="font-medium text-lg" data-testid="text-location">Sarajevo, BiH</p>
+                  </div>
+                </div>
               </div>
               
-              {/* Social Links */}
-              <div className="flex gap-4">
-                <Button variant="outline" size="icon" asChild data-testid="button-linkedin-icon">
-                  <a href="https://www.linkedin.com/in/ivona-malekovic-selimovic-2708ab10a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <SiLinkedin className="w-5 h-5" />
+              {/* LinkedIn */}
+              <div className="mt-8 pt-8 border-t border-border flex justify-center">
+                <Button variant="outline" asChild data-testid="button-linkedin-contact">
+                  <a href="https://www.linkedin.com/in/ivona-malekovic-selimovic-2708ab10a/" target="_blank" rel="noopener noreferrer">
+                    <SiLinkedin className="w-5 h-5 mr-2" />
+                    Connect on LinkedIn
                   </a>
                 </Button>
               </div>
-            </motion.div>
-            
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Card className="p-6 sm:p-8 glass-card">
-                <form className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">Name</label>
-                      <input
-                        type="text"
-                        id="name"
-                        className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="Your name"
-                        data-testid="input-name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">Email</label>
-                      <input
-                        type="email"
-                        id="email"
-                        className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="your@email.com"
-                        data-testid="input-email"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">Subject</label>
-                    <input
-                      type="text"
-                      id="subject"
-                      className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      placeholder="What's this about?"
-                      data-testid="input-subject"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">Message</label>
-                    <textarea
-                      id="message"
-                      rows={5}
-                      className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
-                      placeholder="Your message..."
-                      data-testid="input-message"
-                    ></textarea>
-                  </div>
-                  <Button type="submit" className="w-full" data-testid="button-send-message">
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
-              </Card>
-            </motion.div>
-          </div>
+            </Card>
+          </motion.div>
         </div>
       </section>
 
