@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import profilePhoto from "@assets/jalnkdin_1770313905370.jpeg";
 import { 
   Code, 
   Zap, 
@@ -263,17 +264,15 @@ export default function Home() {
               className="relative flex justify-center lg:justify-end"
             >
               <div className="relative">
-                {/* Profile Image Placeholder */}
+                {/* Profile Image */}
                 <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-gradient-to-br from-primary to-accent p-1">
-                  <div className="w-full h-full rounded-2xl bg-card flex items-center justify-center overflow-hidden">
-                    <div className="text-center p-8">
-                      <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4">
-                        <svg className="w-16 h-16 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                        </svg>
-                      </div>
-                      <p className="text-sm text-muted-foreground">Your photo here</p>
-                    </div>
+                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                    <img 
+                      src={profilePhoto} 
+                      alt="Ivona Malekovic Selimovic" 
+                      className="w-full h-full object-cover"
+                      data-testid="img-profile-photo"
+                    />
                   </div>
                 </div>
                 
