@@ -31,14 +31,6 @@ astro.config.mjs        # Astro config (static output)
 tailwind.config.ts      # Tailwind config with custom theme
 ```
 
-## Legacy React Version
-
-The original React version still exists in:
-```
-client/                 # React app (legacy, unused for static build)
-server/                 # Express server (legacy, unused for static build)
-```
-
 ## Sections
 
 1. **Hero** - Introduction with profile photo, stats (7+ Years, 3 Companies, React Focus, AI Powered), and CTAs
