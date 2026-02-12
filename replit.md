@@ -1,6 +1,6 @@
-# Ivona Malekovic Selimovic - Portfolio Website
+# Ivona Selimovic - Portfolio Website
 
-A professional portfolio website for Ivona Malekovic Selimovic, a Software Developer with 7+ years of experience specializing in React frontend development.
+A professional portfolio website for Ivona Selimovic, a Software Developer with 7+ years of experience specializing in React frontend development.
 
 ## Overview
 
